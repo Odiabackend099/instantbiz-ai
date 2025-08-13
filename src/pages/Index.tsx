@@ -1,13 +1,19 @@
-import { Check, Clock, MessageSquare, Users, Zap, Star, Phone, Mail, MapPin, ArrowRight, Shield, TrendingUp } from "lucide-react";
+import { Check, Clock, MessageSquare, Users, Zap, Star, Phone, Mail, MapPin, ArrowRight, Shield, TrendingUp, LogOut } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { AnimatedPhone } from "@/components/AnimatedPhone";
 import { DemoChat } from "@/components/DemoChat";
 import { NigerianTestimonials } from "@/components/NigerianTestimonials";
 import { FloatingElements } from "@/components/FloatingElements";
+import { useAuth } from "@/components/AuthProvider";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { user, signOut } = useAuth();
+  const { toast } = useToast();
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -15,6 +21,22 @@ const Index = () => {
 
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const handleSignOut = async () => {
+    const { error } = await signOut();
+    if (error) {
+      toast({
+        title: "Error",
+        description: "Failed to sign out. Please try again.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Signed out",
+        description: "You've been successfully signed out.",
+      });
+    }
+  };
 
   const businessTypes = [
     { name: "Restaurants & Food", icon: "🍽️", description: "Handle orders, menu queries, and delivery", businesses: "2,500+ restaurants" },
@@ -61,6 +83,20 @@ const Index = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen">
+      {/* Top navigation bar */}
+      <div className="fixed top-4 right-4 z-50">
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-2 flex items-center gap-3">
+          <span className="text-sm text-gray-600">Welcome, {user?.email}</span>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleSignOut}
+            className="text-gray-600 hover:text-red-600"
+          >
+            <LogOut className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
       {/* Hero Section */}
       <motion.section 
         className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-whatsapp-light via-white to-nigeria-light overflow-hidden"
