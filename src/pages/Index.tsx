@@ -5,6 +5,8 @@ import { AnimatedPhone } from "@/components/AnimatedPhone";
 import { DemoChat } from "@/components/DemoChat";
 import { NigerianTestimonials } from "@/components/NigerianTestimonials";
 import { FloatingElements } from "@/components/FloatingElements";
+import { CEO } from "@/components/CEO";
+import { BankLogos } from "@/components/BankLogos";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -466,6 +468,28 @@ const Index = () => {
             </p>
           </motion.div>
         </div>
+      </motion.section>
+
+      {/* CEO Section */}
+      <motion.section 
+        className="snap-start"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <CEO />
+      </motion.section>
+
+      {/* Bank Logos */}
+      <motion.section 
+        className="snap-start"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <BankLogos />
       </motion.section>
 
       {/* Footer */}
