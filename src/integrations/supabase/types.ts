@@ -60,6 +60,7 @@ export type Database = {
           created_at: string
           id: string
           name: string | null
+          owner_id: string | null
           phone: string
           status: string | null
           trial_ends_at: string | null
@@ -70,6 +71,7 @@ export type Database = {
           created_at?: string
           id?: string
           name?: string | null
+          owner_id?: string | null
           phone: string
           status?: string | null
           trial_ends_at?: string | null
@@ -80,13 +82,22 @@ export type Database = {
           created_at?: string
           id?: string
           name?: string | null
+          owner_id?: string | null
           phone?: string
           status?: string | null
           trial_ends_at?: string | null
           type?: string | null
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "businesses_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
       }
       message_queue: {
         Row: {
@@ -194,6 +205,47 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "payments_business_id_fkey"
+            columns: ["business_id"]
+            isOneToOne: false
+            referencedRelation: "businesses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          business_id: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          phone: string | null
+          role: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          business_id?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          phone?: string | null
+          role?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          business_id?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          phone?: string | null
+          role?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_business_id_fkey"
             columns: ["business_id"]
             isOneToOne: false
             referencedRelation: "businesses"
