@@ -64,7 +64,7 @@ const Index = () => {
     { 
       icon: <Clock className="h-8 w-8" />, 
       title: "24/7 Availability", 
-      description: "Never miss a customer again. Lexi works round the clock, even when you're sleeping or in church.",
+      description: "Never miss a customer again. SmartBiz AI works round the clock, even when you're sleeping or in church.",
       metric: "365 days a year"
     },
     { 
@@ -76,7 +76,7 @@ const Index = () => {
     { 
       icon: <TrendingUp className="h-8 w-8" />, 
       title: "Boost Sales by 300%", 
-      description: "Businesses using Lexi see an average 300% increase in online sales within 30 days.",
+      description: "Businesses using SmartBiz AI see an average 300% increase in online sales within 30 days.",
       metric: "Proven results"
     },
   ];
@@ -129,12 +129,12 @@ const Index = () => {
             </h1>
             
             <p className="text-xl text-gray-600 mb-8 max-w-xl">
-              Transform your WhatsApp into a 24/7 sales machine. Lexi AI handles customer inquiries, takes orders, and grows your business automatically.
+              Transform your WhatsApp into a 24/7 sales machine. SmartBiz AI handles customer inquiries, takes orders, and grows your business automatically.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <motion.a 
-                href="https://wa.me/2348105786326?text=Hi! I want to start my 7-day free trial of Lexi AI for my business"
+                href="https://wa.me/2348105786326?text=Hi! I want to start my 7-day free trial of SmartBiz AI for my business"
                 className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all inline-flex items-center gap-3 pulse-glow group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -254,7 +254,7 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Nigerian Business Owners Choose Lexi
+              Why Nigerian Business Owners Choose SmartBiz AI
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Built specifically for Nigerian businesses with local context and language support
@@ -311,10 +311,10 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Try Lexi AI Right Now
+              Try SmartBiz AI Right Now
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience how Lexi handles customer inquiries. Ask about prices, delivery, or anything else!
+              Experience how SmartBiz AI handles customer inquiries. Ask about prices, delivery, or anything else!
             </p>
           </motion.div>
 
@@ -487,7 +487,7 @@ const Index = () => {
             </div>
 
             <motion.a
-              href="https://wa.me/2348105786326?text=Hi! I want to start my 7-day free trial of Lexi AI for my business"
+              href="https://wa.me/2348105786326?text=Hi! I want to start my 7-day free trial of SmartBiz AI for my business"
               className="bg-[#25D366] hover:bg-[#128C7E] text-white px-12 py-6 rounded-xl text-xl font-bold transition-all inline-flex items-center gap-3 pulse-glow group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -509,7 +509,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-[#25D366]">Lexi AI</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#25D366]">SmartBiz AI</h3>
               <p className="text-gray-400 mb-4">
                 Nigeria's leading AI business assistant for WhatsApp. Built by Nigerians, for Nigerians.
               </p>
@@ -548,7 +548,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  <span>hello@lexi.ng</span>
+                  <span>hello@smartbizai.ng</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
@@ -559,7 +559,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Lexi AI. All rights reserved. Built for Nigerian infrastructure - works on 2G networks.</p>
+            <p>&copy; 2024 SmartBiz AI. All rights reserved. Built for Nigerian infrastructure - works on 2G networks.</p>
           </div>
         </div>
       </footer>

@@ -105,7 +105,7 @@ const Auth = () => {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Lexi AI
+            SmartBiz AI
           </CardTitle>
           <CardDescription>
             Access your AI-powered WhatsApp business assistant
