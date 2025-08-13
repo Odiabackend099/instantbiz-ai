@@ -8,35 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Nigerian-optimized color system */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* WhatsApp Green as primary */
+    --primary: 142 70% 45%; /* #25D366 WhatsApp Green */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 142 50% 95%;
+    --secondary-foreground: 142 70% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 142 50% 95%;
+    --accent-foreground: 142 70% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 142 70% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Nigerian business colors */
+    --whatsapp: 142 70% 45%;
+    --whatsapp-light: 142 50% 95%;
+    --nigeria-green: 120 100% 25%;
+    --success: 120 60% 45%;
+    --warning: 45 100% 60%;
+    
+    /* Performance optimized gradients */
+    --gradient-whatsapp: linear-gradient(135deg, hsl(142 70% 45%), hsl(142 60% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(142 20% 98%));
 
     --sidebar-background: 0 0% 98%;
 

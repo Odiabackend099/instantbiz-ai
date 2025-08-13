@@ -52,6 +52,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Nigerian business optimized colors
+				whatsapp: {
+					DEFAULT: 'hsl(var(--whatsapp))',
+					light: 'hsl(var(--whatsapp-light))'
+				},
+				nigeria: {
+					green: 'hsl(var(--nigeria-green))'
+				},
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
