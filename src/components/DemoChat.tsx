@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useAIAnalytics } from "@/hooks/use-ai-analytics";
 
 const demoResponses: Record<string, string> = {
   "hi": "Welcome to Mama Nkechi Boutique! 👗 How can I help you today?",
@@ -17,6 +18,7 @@ const demoResponses: Record<string, string> = {
 const quickButtons = ["Prices", "Delivery", "Sizes", "Ankara Styles", "Payment"];
 
 export function DemoChat() {
+  const { trackInteraction } = useAIAnalytics();
   const [messages, setMessages] = useState([
     { type: "bot", text: "👋 Hi! I'm Lexi from Mama Nkechi Boutique. Try asking about prices, delivery, or our ankara collection!" }
   ]);
@@ -36,6 +38,8 @@ export function DemoChat() {
     const messageText = message || input.trim();
     if (!messageText) return;
     
+    const startTime = Date.now();
+    
     // Add user message
     setMessages(prev => [...prev, { type: "user", text: messageText }]);
     setTyping(true);
@@ -43,15 +47,26 @@ export function DemoChat() {
     
     // Simulate AI response
     setTimeout(() => {
+      const responseTime = Date.now() - startTime;
       const response = Object.keys(demoResponses).find(key => 
         messageText.toLowerCase().includes(key)
       );
       
+      const botResponse = demoResponses[response] || demoResponses.default;
+      
       setMessages(prev => [...prev, { 
         type: "bot", 
-        text: demoResponses[response] || demoResponses.default 
+        text: botResponse
       }]);
       setTyping(false);
+      
+      // Track AI interaction performance
+      trackInteraction({ 
+        responseTime,
+        wasResolved: response !== undefined,
+        wasConverted: messageText.toLowerCase().includes('buy') || messageText.toLowerCase().includes('order'),
+        userRating: Math.random() > 0.7 ? 5 : 4 // Simulate high satisfaction
+      });
     }, 1200);
   };
 

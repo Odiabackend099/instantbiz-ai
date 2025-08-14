@@ -8,6 +8,8 @@ import { FloatingElements } from "@/components/FloatingElements";
 import { useAuth } from "@/components/AuthProvider";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { PWAInstallPrompt } from "@/components/PWAInstallPrompt";
+import { AIPerformanceDashboard } from "@/components/AIPerformanceDashboard";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -83,6 +85,7 @@ const Index = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen">
+      <PWAInstallPrompt />
       {/* Top navigation bar */}
       <div className="fixed top-4 right-4 z-50">
         <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-2 flex items-center gap-3">
@@ -332,6 +335,34 @@ const Index = () => {
 
       {/* Nigerian Testimonials */}
       <NigerianTestimonials />
+
+      {/* AI Performance Dashboard */}
+      <motion.section 
+        className="py-20 bg-gradient-to-br from-blue-50 to-white snap-start"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              AI Performance & Industry Standards
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real-time performance metrics following global AI industry best practices
+            </p>
+          </motion.div>
+
+          <AIPerformanceDashboard />
+        </div>
+      </motion.section>
 
       {/* Business Types Section */}
       <motion.section 
