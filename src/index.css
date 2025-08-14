@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling and snap */
+/* Premium smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
 }
 
-section {
-  scroll-snap-align: start;
+body {
+  overflow-x: hidden;
+}
+
+/* Remove forced scroll snapping that causes jumping */
+.scroll-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Floating phone animation */

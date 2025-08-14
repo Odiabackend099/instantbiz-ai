@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { PWAInstallPrompt } from "@/components/PWAInstallPrompt";
 import { AIPerformanceDashboard } from "@/components/AIPerformanceDashboard";
+import VoiceChatWidget from "@/components/VoiceChatWidget";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -84,7 +85,7 @@ const Index = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen">
+    <div ref={containerRef} className="min-h-screen scroll-container">
       <PWAInstallPrompt />
       {/* Top navigation bar */}
       <div className="fixed top-4 right-4 z-50">
@@ -194,7 +195,7 @@ const Index = () => {
 
       {/* Stats Section */}
       <motion.section 
-        className="py-20 bg-white snap-start"
+        className="py-20 bg-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -594,6 +595,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Voice Chat Widget */}
+      <VoiceChatWidget />
     </div>
   );
 };
