@@ -11,6 +11,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { PWAInstallPrompt } from "@/components/PWAInstallPrompt";
 import { AIPerformanceDashboard } from "@/components/AIPerformanceDashboard";
 import VoiceChatWidget from "@/components/VoiceChatWidget";
+import TTSDemo from "@/components/TTSDemo";
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -362,6 +363,40 @@ const Index = () => {
           </motion.div>
 
           <AIPerformanceDashboard />
+        </div>
+      </motion.section>
+
+      {/* TTS Demo Section */}
+      <motion.section 
+        className="py-20 bg-gradient-to-br from-purple-50 to-white snap-start"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Voice Technology Demo
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience our Nigerian-optimized text-to-speech technology powered by ODIA TTS
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <TTSDemo />
+          </motion.div>
         </div>
       </motion.section>
 
